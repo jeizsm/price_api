@@ -40,3 +40,8 @@ config :price_api, PriceApi.Repo,
   database: "price_api_dev",
   hostname: "localhost",
   pool_size: 10
+
+config :price_api, :distance_service,
+  host: "localhost",
+  port: 3000
+
