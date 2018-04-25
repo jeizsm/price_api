@@ -9,3 +9,4 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will halt execution if something goes wrong.
+PriceApi.Repo.insert!(%PriceApi.Tariff{minimal_price: 300, serving_price: 150, distance_price: 38, time_price: 15})

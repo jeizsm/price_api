@@ -4,6 +4,7 @@ To start your Phoenix app:
 
   * Install dependencies with `mix deps.get`
   * Change distance service host and port in dev.exs if needed
+  * Run seeds `mix run priv/repo/seeds.exs`
   * Start Phoenix endpoint with `mix phoenix.server`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
