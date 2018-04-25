@@ -11,9 +11,7 @@ config :logger, level: :warn
 
 # Configure your database
 config :price_api, PriceApi.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  adapter: Mongo.Ecto,
   database: "price_api_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

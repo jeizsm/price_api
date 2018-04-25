@@ -6,6 +6,7 @@ defmodule PriceApi.Router do
   end
 
   scope "/api", PriceApi do
+    resources "/prices", PriceController, only: [:index]
     pipe_through :api
   end
 end

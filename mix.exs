@@ -33,11 +33,14 @@ defmodule PriceApi.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:phoenix, "~> 1.3.2"},
+      {:phoenix, github: "phoenixframework/phoenix"},
       {:phoenix_pubsub, "~> 1.0"},
       {:phoenix_ecto, "~> 3.2"},
       {:gettext, "~> 0.11"},
-      {:cowboy, "~> 1.0"},
+      {:cowboy, "~> 2.3"},
+      {:grpc, github: "tony612/grpc-elixir"},
+      {:mongodb_ecto, "~> 0.2"},
+      {:poison, "~> 3.1"}
     ]
   end
 

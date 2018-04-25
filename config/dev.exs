@@ -36,9 +36,7 @@ config :phoenix, :stacktrace_depth, 20
 
 # Configure your database
 config :price_api, PriceApi.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  adapter: Mongo.Ecto,
   database: "price_api_dev",
   hostname: "localhost",
   pool_size: 10
