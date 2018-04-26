@@ -6,10 +6,11 @@ defmodule CalcPrice do
   alias PriceApi.Repo
   alias PriceApi.Tariff
   alias PriceApi.Location.Cache
+  alias PriceApi.Location.Caches
   require Logger
 
   def calc_price(location) do
-    case Repo.one(Cache) do
+    case Caches.cached([location.start_lon, location.start_lat], [location.end_lon, location.end_lat]) do
       %Cache{price: price} ->
         Logger.info("cached_price: #{price}")
         price
