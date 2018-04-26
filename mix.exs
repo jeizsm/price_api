@@ -19,14 +19,14 @@ defmodule PriceApi.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {PriceApi, []},
-      extra_applications: [:logger]
+      mod: {PriceApi.Application, []},
+      extra_applications: [:logger, :runtime_tools]
     ]
   end
 
   # Specifies which paths to compile per environment.
-  defp elixirc_paths(:test), do: ["lib", "web", "test/support"]
-  defp elixirc_paths(_),     do: ["lib", "web"]
+  defp elixirc_paths(:test), do: ["lib", "test/support"]
+  defp elixirc_paths(_),     do: ["lib"]
 
   # Specifies your project dependencies.
   #
@@ -40,7 +40,7 @@ defmodule PriceApi.Mixfile do
       {:cowboy, "~> 2.3"},
       {:grpc, github: "tony612/grpc-elixir"},
       {:mongodb_ecto, "~> 0.2"},
-      {:poison, "~> 3.1"}
+      {:poison, "~> 3.1"},
     ]
   end
 

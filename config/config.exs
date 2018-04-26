@@ -10,17 +10,17 @@ config :price_api,
   ecto_repos: [PriceApi.Repo]
 
 # Configures the endpoint
-config :price_api, PriceApi.Endpoint,
+config :price_api, PriceApiWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "wZI/XqLlj9ylrTXkK09OWS1URvBSRIEXyaoEkkNLUEydJcverqHYFlNl+z6cmuln",
-  render_errors: [view: PriceApi.ErrorView, accepts: ~w(json)],
+  secret_key_base: "Q+Q1FKi1v7oo1Zdu9YxxpHiaf9VPT4CgSP56WmHVwQR2+3NnI977Bp0v/AIpveBB",
+  render_errors: [view: PriceApiWeb.ErrorView, accepts: ~w(json)],
   pubsub: [name: PriceApi.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
-  metadata: [:request_id]
+  metadata: [:user_id]
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

@@ -1,11 +1,11 @@
 # PriceApi
 
-To start your Phoenix app:
+To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
   * Change distance service host and port in dev.exs if needed
   * Run seeds `mix run priv/repo/seeds.exs`
-  * Start Phoenix endpoint with `mix phoenix.server`
+  * Start Phoenix endpoint with `mix phx.server`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
