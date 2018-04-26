@@ -22,7 +22,7 @@ defmodule PriceApi.Location.Caches do
   defmacrop get_nearest(field_name, point, time) do
     quote do
       from(c in Cache,
-            where: c.inserted_at > ^unquote(time) and nearSphere(unquote(field_name), unquote(point)),
+            where: c.inserted_at > ^unquote(time) and near_sphere(unquote(field_name), unquote(point)),
             order_by: [desc: c.inserted_at],
             select: [:id, :price])
     end
