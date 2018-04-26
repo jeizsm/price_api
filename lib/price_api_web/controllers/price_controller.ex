@@ -1,12 +1,18 @@
 defmodule PriceApiWeb.PriceController do
   use PriceApiWeb, :controller
 
-  import CalcPrice, only: [calc_price: 4]
+  alias PriceApi.Location
+  import CalcPrice, only: [calc_price: 1]
 
   action_fallback PriceApiWeb.FallbackController
 
-  def index(conn, %{"start_lat" => start_lat, "start_lon" => start_lon, "end_lat" => end_lat, "end_lon" => end_lon}) do
-    price = calc_price(start_lat, start_lon, end_lat, end_lon)
-    render(conn, "index.json", price: price)
+  def index(conn, params) do
+    location = Location.changeset(%Location{}, params)
+    if location.valid? do
+      price = calc_price(location.changes)
+      render(conn, "index.json", price: price)
+    else
+      {:error, location}
+    end
   end
 end
